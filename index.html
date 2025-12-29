@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>OSS Manager - Elite BJJ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bjj-red: #e11d48;
+        --bjj-black: #09090b;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bjj-black);
+        color: #fafafa;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+      }
+      .safe-top { padding-top: env(safe-area-inset-top); }
+      .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+      
+      .active-tab {
+        color: var(--bjj-red);
+        position: relative;
+      }
+      .active-tab::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background: var(--bjj-red);
+        border-radius: 50%;
+      }
+      
+      .belt-rank {
+        height: 24px;
+        width: 100px;
+        border-radius: 4px;
+        display: flex;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      .belt-main { flex: 1; }
+      .belt-tip { width: 30%; background: #000; display: flex; align-items: center; justify-content: center; gap: 2px; }
+      .stripe { width: 2px; height: 12px; background: #fff; }
+
+      /* Hide scrollbar */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
